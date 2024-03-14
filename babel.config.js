@@ -8,6 +8,10 @@ module.exports = function(api) {
         "alias": {
           "@assets": "./assets",
           "@components": "./components",
+          "@storage": "./storage",
+          "@services": './services',
+          "@screens": "./screens",
+          "@utils": "./utils",
         }
       }]
     ]

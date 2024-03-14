@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { View, Text, Image, ScrollView } from 'react-native';
 import styles from './SpendByCategory.styles.js';
 import { SpendCategoryList } from './SpendCategoryList';
 import ActionButton from '@components/ActionButton';
+import { findSpendByCategory, addSpendByCategory } from '@services/SpendByMonthService';
+import { getCurrentMonth } from '@utils/DateUtil.js';
 
 const SpendByCategory = () => {
-  const spendCategories = [
-    { categoryName: 'Food & Drink', amount: '$230', percentage: 20 },
-    { categoryName: 'Shopping', amount: '$329', percentage: 30 },
-    { categoryName: 'Entertainment', amount: '$100', percentage: 10 },
-    { categoryName: 'Utilities', amount: '$300', percentage: 25 },
-    { categoryName: 'Transportation', amount: '$150', percentage: 15 },
-  ];
+  const [spendByCategory, setSpendByCategory] = useState(null);
+
+  addSpendByCategory(getCurrentMonth(), {
+    amount: 100,
+    percentage: 20,
+    categoryName: 'Food & Drink'
+  });
+
+  useEffect(() => {
+    findSpendByCategory(getCurrentMonth()).then((data) => {
+      setSpendByCategory(data);
+    });
+  }, []);
 
   return (
     <ScrollView stickyHeaderIndices={[0]} style={styles.container}>
@@ -35,7 +43,7 @@ const SpendByCategory = () => {
         </View>
       </View>
       <Text style={styles.sectionTitle}>Spend by category</Text>
-      {spendCategories.map(category => (
+      {spendByCategory.map(category => (
         <SpendCategoryList key={category.categoryName} {...category} />
       ))}
     </ScrollView>

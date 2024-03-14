@@ -1,6 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import SpendByCategory from './screens/SpendByCategory';
+import storage from '@storage';
+
+global.storage = storage;
 
 export default function App() {
   return (
