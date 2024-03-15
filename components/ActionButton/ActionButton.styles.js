@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     container: {
@@ -10,6 +12,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: 40,
         borderRadius: 8,
+        width: width * 0.4, 
     },
     buttonText: {
         fontSize: 14,

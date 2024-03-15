@@ -8,7 +8,7 @@ module.exports = function(api) {
         "alias": {
           "@assets": "./assets",
           "@components": "./components",
-          "@storage": "./storage",
+          "@database": "./database",
           "@services": './services',
           "@screens": "./screens",
           "@utils": "./utils",

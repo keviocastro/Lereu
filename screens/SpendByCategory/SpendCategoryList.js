@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import HorizontalBar from '@components/HorizontalBar';
+import HorizontalBar from 'components/HorizontalBar';
 import styles from './SpendCategoryList.styles';
 
 export const SpendCategoryList = ({ categoryName, amount, percentage }) => {

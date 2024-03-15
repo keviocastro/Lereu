@@ -2,25 +2,9 @@ import { StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#FFF'
-  },
   header: {
     paddingBottom: 32,
     alignItems: 'center'
-  },
-  profileIconContainer: {
-    marginTop: Constants.statusBarHeight + 24,
-    marginBottom: 24,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'flex-end'
-  },
-  profileIcon: {
-    width: 24,
-    height: 24,
-    borderRadius: 24,
   },
   summaryContainer: {
     alignItems: 'center',
