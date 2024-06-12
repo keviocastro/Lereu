@@ -52,7 +52,7 @@ export default function App() {
         }} />
         <Stack.Screen name="NewExpense" component={NewExpense} options={{
           headerLeft: () => null,
-          headerTitle: '',
+          headerTitle: 'New Expense',
           headerRight: () => {
             const navigation = useNavigation();
             return (
